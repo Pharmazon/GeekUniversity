@@ -7,7 +7,7 @@ package ru.shcheglov.Homework1;
  * @version dated Nov 21, 2017
  * @link https://github.com/Pharmazon
  */
-class Main {
+public class Main {
 
     public static void main(String[] args) {
         

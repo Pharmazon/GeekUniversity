@@ -9,7 +9,7 @@ package ru.shcheglov.Homework4; /**
 import java.util.Random;
 import java.util.Scanner;
 
-class Main {
+public class Main {
     
     final int SIZE = 7;
     final int SERIES_TO_WIN = 4;

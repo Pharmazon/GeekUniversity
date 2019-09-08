@@ -11,10 +11,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
-class Main {
+public class Main {
     
     static Scanner sc = new Scanner(System.in);
     static Random rand = new Random();    
@@ -28,7 +29,7 @@ class Main {
                     guessTheNumber(10, 3);
                     break;
                 case "2":
-                    guessTheWord(readFromFileByLines("inputwords.txt"));
+                    guessTheWord(Objects.requireNonNull(readFromFileByLines("inputwords.txt")));
                     break;
                 default:
                     return;
@@ -60,7 +61,7 @@ class Main {
                     break;                  
                 } else if (uservar > val) {
                     System.out.println("Your number is GREATER. You have " + (times - i)+ " attempts left.");
-                } else if (uservar < val) {
+                } else {
                     System.out.println("Your number is LESS. You have " + (times - i)+ " attempts left.");                
                 } 
                 if (i == times) System.out.println("Unfortunately, you LOST! I guessed number '" + val + "'."); 
@@ -75,13 +76,13 @@ class Main {
     
     //Task 2. Guess the word GAME
     public static void guessTheWord(String[] arr) {  
-        String userword = new String();
+        String userword;
         boolean play = true;
         String compword = new String(arr[rand.nextInt(arr.length - 1)].toLowerCase());
         char[] hide = new char[15];
         hide = "###############".toCharArray();
         int minsym = 0;  
-        String convertToStr = new String();
+        String convertToStr;
         
         //Print welcome words to console
         System.out.println("========== GUESS THE WORD GAME ==========");        
@@ -109,9 +110,9 @@ class Main {
             //check hide array if contains compword. If not, print to console the guessed characters 
             //and print congratulations in case of user guess the word or guessed the last character
             convertToStr = String.valueOf(hide);
-            if (convertToStr.indexOf(compword) == -1)
+            if (!convertToStr.contains(compword))
                 System.out.println("You guessed the following characters: " + convertToStr);
-            else if (userword.equalsIgnoreCase(compword) == true || convertToStr.indexOf(compword) >= 0) {
+            else if (userword.equalsIgnoreCase(compword) || convertToStr.contains(compword)) {
                 System.out.println("Congratulations! You guessed the word '" + compword + "'.");
                 play = false;                
             }
