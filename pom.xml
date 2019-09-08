@@ -13,6 +13,7 @@
         <module>preparation</module>
         <module>course-first</module>
         <module>course-second</module>
+        <module>interview</module>
     </modules>
 
     <properties>
