@@ -9,8 +9,8 @@ package ru.shcheglov;
  * @version 0.1 dated Dec 20, 2017
  */
 
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
 class Button extends JButton {
     
