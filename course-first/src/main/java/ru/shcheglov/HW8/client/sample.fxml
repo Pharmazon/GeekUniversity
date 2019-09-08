@@ -1,0 +1,18 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<HBox fx:controller="ru.shcheglov.HW8.client.Controller"
+      xmlns:fx="http://javafx.com/fxml" alignment="center" stylesheets="@style.css">
+    <VBox HBox.hgrow="ALWAYS">
+        <HBox fx:id="authPanel">
+            <TextField fx:id="loginField" promptText="Login" HBox.hgrow="ALWAYS"/>
+            <PasswordField fx:id="passField" promptText="Password" HBox.hgrow="ALWAYS" onAction="#sendAuthMsg"/>
+            <Button text="Login" onAction="#sendAuthMsg"/>
+        </HBox>
+        <TextArea fx:id="textArea" editable="false" VBox.vgrow="ALWAYS"/>
+        <HBox fx:id="msgPanel">
+            <TextField fx:id="msgField" promptText="Type your message here..." HBox.hgrow="ALWAYS" onAction="#sendMsg"/>
+            <Button text="Send" onAction="#sendMsg"/>
+        </HBox>
+    </VBox>
+    <ListView fx:id="clientsListView" minWidth="100" visible="false" managed="false" onMouseClicked="#clientsListClicked"/>
+</HBox>
