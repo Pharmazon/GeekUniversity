@@ -1,0 +1,6 @@
+monster_type speed hp_max damage_power kill_premium
+0 100 25 1 5
+1 120 30 2 10
+2 50 35 3 15
+3 150 40 1 20
+4 30 10 2 25

@@ -17,6 +17,7 @@
         <module>cloud-storage</module>
         <module>fifteen-puzzle-game</module>
         <module>fx-sql-chat</module>
+        <module>tower-defence-game</module>
     </modules>
 
     <properties>

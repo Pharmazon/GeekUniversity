@@ -1,0 +1,6 @@
+turret_type cost_construction fire_rate damage radius premium_destruction bullet_speed rotation_speed
+0 10 0.1 1 150 5 100.0 270.0
+1 20 0.15 2 160 10 200.0 300.0
+2 30 0.20 3 200 15 300.0 350.0
+3 40 0.25 4 250 20 400.0 400.0
+4 50 0.30 5 300 25 500.0 500.0
