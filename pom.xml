@@ -15,6 +15,7 @@
         <module>course-second</module>
         <module>interview</module>
         <module>cloud-storage</module>
+        <module>fifteen-puzzle-game</module>
     </modules>
 
     <properties>
