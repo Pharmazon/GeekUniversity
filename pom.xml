@@ -14,6 +14,7 @@
         <module>course-first</module>
         <module>course-second</module>
         <module>interview</module>
+        <module>cloud-storage</module>
     </modules>
 
     <properties>

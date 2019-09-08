@@ -1,0 +1,27 @@
+package ru.cloud.storage.common;
+
+public enum Commands {
+    AUTH,
+    REGISTER,
+    CHANGEPASS,
+    LOGOUT,
+    OPENDIR,
+    DELETEFILEDIR,
+    REFRESH,
+    RENAME,
+    CREATEDIR,
+    DOWNLOADFILEFOLDER,
+    GETFILELIST,
+
+    AUTHOK,
+    AUTHWRONG,
+    REGISTEROK,
+    REGISTERFAIL,
+    LOGINBUSY,
+    CHANGEPASSOK,
+    CHANGEPASSWRONG,
+    FILELIST,
+    LOGOUTOK,
+    DELETEFAIL,
+    UPLOADFAIL,
+}
