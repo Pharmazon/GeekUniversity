@@ -16,6 +16,7 @@
         <module>interview</module>
         <module>cloud-storage</module>
         <module>fifteen-puzzle-game</module>
+        <module>fx-sql-chat</module>
     </modules>
 
     <properties>
