@@ -13,7 +13,7 @@ public class Settings {
 
     public static final String DB_LOGIN = "postgres";
 
-    public static final String DB_PASSWORD = "postgre";
+    public static final String DB_PASSWORD = "postgres";
 
     public static final String DB_NAME = "postgres";
 
