@@ -91,6 +91,16 @@
                 <module>spring-integration</module>
             </modules>
         </profile>
+<!--        <profile>-->
+<!--            <id>CLOUD</id>-->
+<!--            <modules>-->
+<!--                <module>cluster-config-server</module>-->
+<!--                <module>cluster-discovery-server</module>-->
+<!--                <module>cluster-microservice-api</module>-->
+<!--                <module>cluster-server-enterprise</module>-->
+<!--                <module>cluster-server-proxy</module>-->
+<!--            </modules>-->
+<!--        </profile>-->
         <profile>
             <id>ALL</id>
             <activation>
