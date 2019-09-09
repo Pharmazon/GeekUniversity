@@ -18,6 +18,7 @@
         <module>fifteen-puzzle-game</module>
         <module>fx-sql-chat</module>
         <module>tower-defence-game</module>
+        <module>spring-integration</module>
     </modules>
 
     <properties>
@@ -78,9 +79,15 @@
             </modules>
         </profile>
         <profile>
-            <id>CLOUD</id>
+            <id>CLOUD_STORAGE</id>
             <modules>
                 <module>cloud-storage</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>INTEGRATION</id>
+            <modules>
+                <module>spring-integration</module>
             </modules>
         </profile>
         <profile>
