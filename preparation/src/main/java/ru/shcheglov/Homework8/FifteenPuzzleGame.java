@@ -166,10 +166,10 @@ class FifteenPuzzleGame extends JFrame implements ActionListener {
         int sum = 0;
         boolean status = false;
 
-        for(int i = 0; i < arr.length; i++) {
-            for(int j = 0; j < arr.length; j++) {
-                if (!arr[i][j].getText().equals("")) {
-                    if (Integer.parseInt(arr[i][j].getText()) == count) {
+        for (Button[] buttons : arr) {
+            for (int j = 0; j < arr.length; j++) {
+                if (!buttons[j].getText().equals("")) {
+                    if (Integer.parseInt(buttons[j].getText()) == count) {
                         sum += count;
                     }
                 }
