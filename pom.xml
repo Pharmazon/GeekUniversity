@@ -19,6 +19,7 @@
         <module>fx-sql-chat</module>
         <module>tower-defence-game</module>
         <module>spring-integration</module>
+        <module>spring-cloud</module>
     </modules>
 
     <properties>
