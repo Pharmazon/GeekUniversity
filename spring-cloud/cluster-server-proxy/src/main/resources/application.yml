@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cluster-serverp-proxy
+
+server:
+  port: 7777
+
+zuul:
+  routes:
+    date:
+      path: /calendar/**
+      serviceId: cluster-microservice-api
+
+ribbon:
+  eureka:
+    enabled: true
