@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.td.game.util.Assets;
 import com.td.game.TowerDefenseGame;
+import com.td.game.util.Assets;
 
 public class ScreenManager {
     public static final int WORLD_WIDTH = 1280;

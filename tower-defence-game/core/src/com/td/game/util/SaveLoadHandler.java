@@ -4,8 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.td.game.screen.GameScreen;
 
-import java.io.*;
-
 public class SaveLoadHandler {
     private FileHandle file;
     private String filename;
