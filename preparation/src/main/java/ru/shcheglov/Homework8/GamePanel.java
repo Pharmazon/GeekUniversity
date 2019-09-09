@@ -10,8 +10,7 @@ package ru.shcheglov.Homework8;
  */
 
 import javax.swing.*;
-import java.awt.Button;
- 
+
 public class GamePanel extends JPanel {
 
     public GamePanel() {

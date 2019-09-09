@@ -10,23 +10,22 @@ package ru.shcheglov;
  */
 
 import javax.swing.*;
-import java.awt.Button;
- 
+
 class GamePanel extends JPanel {
     
     public static void main(String[] args) {
     }
     
-    public GamePanel() {
+    GamePanel() {
         super();
     }
     
     //repaint field after changes
     void repaintField(Button[][] arr) {
-        for(int i = 0; i < arr.length; i++) {
-            for(int j = 0; j < arr.length; j++) {
-                if (arr[i][j] != null) {
-                    this.add(arr[i][j]);
+        for (Button[] buttons : arr) {
+            for (int j = 0; j < arr.length; j++) {
+                if (buttons[j] != null) {
+                    this.add(buttons[j]);
                 }
             }
         }

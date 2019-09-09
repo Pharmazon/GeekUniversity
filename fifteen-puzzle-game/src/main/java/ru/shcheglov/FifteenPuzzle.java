@@ -10,7 +10,6 @@ package ru.shcheglov;
  */
 
 import javax.swing.*;
-import java.awt.Button;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,17 +22,17 @@ class FifteenPuzzle extends JFrame implements ActionListener {
     final int WINDOW_HEIGHT = 550;
     final String BTN_NEWGAME = "New game";
     final String BTN_EXIT = "Exit";   
-    java.awt.Button[][] arr = new java.awt.Button[4][4];
+    Button[][] arr = new Button[4][4];
     
     GamePanel gamepanel = new GamePanel();
     JPanel panelbtn = new JPanel();
-    java.awt.Button mem = new java.awt.Button("");
+    Button mem = new Button("");
     
     public static void main(String[] args) {
         new FifteenPuzzle();
     }
     
-    public FifteenPuzzle() {
+    private FifteenPuzzle() {
         //initialize the main window
         this.setTitle(WINDOW_TITLE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -57,7 +56,7 @@ class FifteenPuzzle extends JFrame implements ActionListener {
         shuffle();
 
         //Button "New game"
-        java.awt.Button btnnewgame = new java.awt.Button(BTN_NEWGAME);
+        Button btnnewgame = new Button(BTN_NEWGAME);
         btnnewgame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -72,14 +71,11 @@ class FifteenPuzzle extends JFrame implements ActionListener {
         panelbtn.add(btnnewgame);
         
         //Button "Exit"
-        java.awt.Button btnexit = new java.awt.Button(BTN_EXIT);
-        btnexit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int resexit = JOptionPane.showConfirmDialog(null, "Do you want to exit?", 
-                        "Exit confirmation", JOptionPane.YES_NO_OPTION);
-                if (resexit == JOptionPane.YES_OPTION) System.exit(0);
-            }
+        Button btnexit = new Button(BTN_EXIT);
+        btnexit.addActionListener(e -> {
+            int resexit = JOptionPane.showConfirmDialog(null, "Do you want to exit?",
+                    "Exit confirmation", JOptionPane.YES_NO_OPTION);
+            if (resexit == JOptionPane.YES_OPTION) System.exit(0);
         });
         panelbtn.add(btnexit);
 
@@ -96,13 +92,13 @@ class FifteenPuzzle extends JFrame implements ActionListener {
     //click on field buttons events
     @Override
     public void actionPerformed(ActionEvent e) {
-        java.awt.Button curbtn = (java.awt.Button)(e.getSource());
+        Button curbtn = (Button)(e.getSource());
         int[] xy = curbtn.getElementByXY(curbtn.getX(), curbtn.getY());
         int k = xy[0];
         int l = xy[1];
         mem = null;
         if (l + 1 < 4) {
-            if (arr[k][l + 1].getText() == "") {
+            if (arr[k][l + 1].getText().equals("")) {
                 gamepanel.remove(arr[k][l]);
                 gamepanel.remove(arr[k][l + 1]);
                 this.repaint();
@@ -114,7 +110,7 @@ class FifteenPuzzle extends JFrame implements ActionListener {
             }
         }
         if (l - 1 >= 0) {
-            if (arr[k][l - 1].getText() == "") {
+            if (arr[k][l - 1].getText().equals("")) {
                 gamepanel.remove(arr[k][l]);
                 gamepanel.remove(arr[k][l - 1]);
                 this.repaint();
@@ -126,7 +122,7 @@ class FifteenPuzzle extends JFrame implements ActionListener {
             }
         }
         if (k + 1 < 4) {
-            if (arr[k + 1][l].getText() == "") {
+            if (arr[k + 1][l].getText().equals("")) {
                 gamepanel.remove(arr[k][l]);
                 gamepanel.remove(arr[k + 1][l]);
                 this.repaint();
@@ -138,7 +134,7 @@ class FifteenPuzzle extends JFrame implements ActionListener {
             }
         }
         if (k - 1 >= 0) {
-            if (arr[k - 1][l].getText() == "") {
+            if (arr[k - 1][l].getText().equals("")) {
                 gamepanel.remove(arr[k][l]);
                 gamepanel.remove(arr[k - 1][l]);
                 this.repaint();
@@ -153,15 +149,15 @@ class FifteenPuzzle extends JFrame implements ActionListener {
     }
     
     //Initial fill the array by buttons
-    void initGameField() {
+    private void initGameField() {
         gamepanel.removeAll();
         int textnum = 1;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
                 if (textnum == 16) {
-                    arr[i][j] = new java.awt.Button("", 70);
+                    arr[i][j] = new Button("", 70);
                 } else {
-                    arr[i][j] = new java.awt.Button(Integer.toString(textnum), 70);
+                    arr[i][j] = new Button(Integer.toString(textnum), 70);
                 }
                 arr[i][j].addActionListener(this);
                 gamepanel.add(arr[i][j]);
@@ -172,15 +168,15 @@ class FifteenPuzzle extends JFrame implements ActionListener {
     }
 
     //check if win method
-    boolean isGameOver() {
+    private boolean isGameOver() {
         int count = 1;
         int sum = 0;
         boolean status = false;
-        
-        for(int i = 0; i < arr.length; i++) {
-            for(int j = 0; j < arr.length; j++) {
-                if (arr[i][j].getText() != "") {
-                    if (Integer.parseInt(arr[i][j].getText()) == count) {
+
+        for (Button[] buttons : arr) {
+            for (int j = 0; j < arr.length; j++) {
+                if (!buttons[j].getText().equals("")) {
+                    if (Integer.parseInt(buttons[j].getText()) == count) {
                         sum += count;
                     }
                 }
@@ -192,9 +188,9 @@ class FifteenPuzzle extends JFrame implements ActionListener {
     }
     
     //shuffling method
-    void shuffle() {
+    private void shuffle() {
         Random rnd = new Random();
-        java.awt.Button mem = new Button("");
+        Button mem;
         int[][] txtarr = new int[4][4];
         int txtnum = 1;
         int ind1 = 0;
@@ -232,7 +228,7 @@ class FifteenPuzzle extends JFrame implements ActionListener {
                                 arr[i][j] = arr[k][l];
                                 arr[k][l] = mem;
                             }
-                        } else if (arr[k][l].getText() == "" && txtarr[i][j] == 16) {
+                        } else if (arr[k][l].getText().equals("") && txtarr[i][j] == 16) {
                             mem = arr[i][j];
                             arr[i][j] = arr[k][l];
                             arr[k][l] = mem;
