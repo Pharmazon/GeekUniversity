@@ -9,9 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.shcheglov</groupId>
     <artifactId>tower-defence-game</artifactId>
     <version>1.0-SNAPSHOT</version>
-
 
 </project>
