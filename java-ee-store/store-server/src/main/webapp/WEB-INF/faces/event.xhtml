@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <ui:composition template="/WEB-INF/templates/template.xhtml">
+            <ui:param name="title" value="TEST" />
+            <ui:define name="content">
+                <h:form>
+                    <p:growl id="growl" />
+                    <p:outputPanel>
+                        <p:commandButton value="FIRE CDI SYNC" actionListener="#{eventController.fireSyncEvent}" update="growl" />
+                    </p:outputPanel>
+                    <p:spacer height="10" />
+                    <p:outputPanel>
+                        <p:commandButton value="FIRE CDI ASYNC" actionListener="#{eventController.fireAsyncEvent}" update="growl" />
+                    </p:outputPanel>
+                    <p:spacer height="10" />
+                    <p:outputPanel>
+                        <p:commandButton value="FIRE JMS QUEUE" actionListener="#{eventController.fireQueue}" update="growl" />
+                    </p:outputPanel>
+                    <p:spacer height="10" />
+                    <p:outputPanel>
+                        <p:commandButton value="FIRE JMS TOPIC" actionListener="#{eventController.fireTopic}" update="growl" />
+                    </p:outputPanel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
