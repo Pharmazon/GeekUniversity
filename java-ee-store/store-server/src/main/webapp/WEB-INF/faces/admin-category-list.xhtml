@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <ui:composition template="/WEB-INF/templates/template.xhtml">
+            <ui:param name="title" value="CATEGORY LIST" />
+            <ui:define name="content">
+                <h:form>
+                    <h1>
+                        <p:outputLabel value="CATEGORY LIST" />
+                    </h1>
+                    <p:dataTable id="dataTable"
+                                 rowIndexVar="indexVar"
+                                 value="#{adminCategoryListController.listCategories}"
+                                 var="category">
+                        <f:facet name="header">
+                            <p:outputPanel style="margin: 5px;">
+                                <p:outputLabel value="CATEGORIES" />
+                            </p:outputPanel>
+                        </f:facet>
+                        <p:column headerText="№" width="60" style="text-align: center;">
+                            <p:outputLabel value="#{indexVar + 1}."/>
+                        </p:column>
+                        <p:column headerText="Parent" width="100" style="text-align: left;">
+                            <p:outputLabel value="#{category.parent.name}."/>
+                        </p:column>
+                        <p:column headerText="Name" width="100" style="text-align: left;">
+                            <p:outputLabel value="#{category.name}."/>
+                        </p:column>
+                        <p:column width="30" style="text-align: center;">
+                            <p:link outcome="product-edit">
+                                <i class="fa fa-edit" style="font-size: 1.5em; margin: 5px;" />
+                                <f:param name="id" value="#{category.id}" />
+                            </p:link>
+                        </p:column>
+                        <p:column width="30" style="text-align: center;">
+                            <p:commandLink actionListener="#{adminCategoryListController.removeCategoryById(category.id)}"
+                                           update="dataTable">
+                                <i class="fa fa-trash" style="font-size: 1.5em; margin: 5px;" />
+                            </p:commandLink>
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>

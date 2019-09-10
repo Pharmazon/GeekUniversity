@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ADMIN | #{title}</title>
+        <h:outputStylesheet library="styles" />
+    </h:head>
+    <h:body style="padding: 0; margin: 0">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr style="height: 50px">
+                <td bgcolor="black" width="100%" colspan="3">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td style="color: white; " width="100%">
+                                <p:link style="color: white; margin: 0 20px 0 20px;" outcome="admin-index">MAIN</p:link>
+                                <p:link style="color: white; margin-right: 20px;" outcome="admin-product-list">PRODUCTS</p:link>
+                                <p:link style="color: white; margin-right: 20px;" outcome="admin-category-list">CATEGORIES</p:link>
+                                <p:link style="color: white; margin-right: 20px;" outcome="admin-order-list">ORDERS</p:link>
+                                <p:link style="color: white; margin-right: 20px;" outcome="event">TEST</p:link>
+                                <!--<p:link style="color: white; margin-left: auto;" outcome="#{authService.closeSession()}">Logout</p:link>-->
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%" colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td width="20" nowrap="nowrap">&nbsp;</td>
+                <td width="100%">
+                    <ui:insert name="content" />
+                </td>
+                <td width="20" nowrap="nowrap">&nbsp;</td>
+            </tr>
+        </table>
+    </h:body>
+</html>
