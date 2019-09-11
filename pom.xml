@@ -22,6 +22,7 @@
         <module>spring-cloud</module>
         <module>java-ee-store</module>
         <module>java-ee-basic</module>
+        <module>multithreading</module>
     </modules>
 
     <properties>
