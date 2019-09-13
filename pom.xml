@@ -20,12 +20,16 @@
         <module>tower-defence-game</module>
         <module>spring-integration</module>
         <module>spring-cloud</module>
+        <module>java-ee-store</module>
+        <module>java-ee-basic</module>
+        <module>multithreading</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -91,6 +95,16 @@
                 <module>spring-integration</module>
             </modules>
         </profile>
+<!--        <profile>-->
+<!--            <id>CLOUD</id>-->
+<!--            <modules>-->
+<!--                <module>cluster-config-server</module>-->
+<!--                <module>cluster-discovery-server</module>-->
+<!--                <module>cluster-microservice-api</module>-->
+<!--                <module>cluster-server-enterprise</module>-->
+<!--                <module>cluster-server-proxy</module>-->
+<!--            </modules>-->
+<!--        </profile>-->
         <profile>
             <id>ALL</id>
             <activation>

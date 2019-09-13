@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:metadata>
+        <f:viewParam name="id" value="#{adminProductEditController.id}" />
+        <f:viewAction action="#{adminProductEditController.init}" />
+    </f:metadata>
+    <f:view>
+        <ui:composition template="/WEB-INF/templates/template.xhtml">
+            <ui:param name="title" value="PRODUCT EDIT" />
+            <ui:define name="content">
+                <h1>
+                    <p:outputLabel value="PRODUCT EDIT" />
+                </h1>
+                <h:form>
+                    <p:outputPanel>
+                        <p:outputLabel value="ID" />
+                    </p:outputPanel>
+                    <p:outputPanel>
+                        <p:outputLabel value="#{adminProductEditController.id}" />
+                    </p:outputPanel>
+                    <p:spacer height="20" />
+
+                    <p:outputPanel>
+                        <p:outputLabel value="NAME" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="ui-fluid">
+                        <p:inputText value="#{adminProductEditController.product.name}" />
+                    </p:outputPanel>
+                    <p:spacer height="20" />
+
+                    <p:outputPanel>
+                        <p:outputLabel value="CATEGORY" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="ui-fluid">
+                        <p:inputText value="#{adminProductEditController.product.category.name}" />
+                    </p:outputPanel>
+                    <p:spacer height="20" />
+
+                    <p:outputPanel>
+                        <p:outputLabel value="PARENT CATEGORY" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="ui-fluid">
+                        <p:inputText value="#{adminProductEditController.product.category.parent.name}" />
+                    </p:outputPanel>
+                    <p:spacer height="20" />
+
+                    <p:outputPanel>
+                        <p:outputLabel value="PRICE" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="ui-fluid">
+                        <p:inputText value="#{adminProductEditController.product.price}" />
+                    </p:outputPanel>
+                    <p:spacer height="20" />
+
+                    <p:outputPanel>
+                        <p:outputLabel value="QUANTITY" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="ui-fluid">
+                        <p:inputText value="#{adminProductEditController.product.quantity}" />
+                    </p:outputPanel>
+                    <p:spacer height="20" />
+
+                    <p:outputPanel>
+                        <p:outputLabel value="AMOUNT" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="ui-fluid">
+                        <p:inputText value="#{adminProductEditController.product.amount}" />
+                    </p:outputPanel>
+                    <p:spacer height="20" />
+
+                    <p:outputPanel>
+                        <p:outputLabel value="DATE" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="ui-fluid">
+                        <p:calendar value="#{adminProductEditController.product.dateAdded}" />
+                    </p:outputPanel>
+                    <p:spacer height="20" />
+
+                    <p:outputPanel>
+                        <p:commandButton value="SAVE" action="#{adminProductEditController.save}" />
+                        <p:spacer height="20" />
+                        <p:button value="Products" outcome="product-list">
+                            <f:param name="a" value="1" />
+                        </p:button>
+                    </p:outputPanel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
