@@ -1,4 +1,4 @@
-package ru.shcheglov.homework3.task2;
+package ru.shcheglov.multithreading.task2;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

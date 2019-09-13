@@ -1,4 +1,4 @@
-package ru.shcheglov.homework3.task1;
+package ru.shcheglov.multithreading.task1;
 
 public class PingPongMain {
 

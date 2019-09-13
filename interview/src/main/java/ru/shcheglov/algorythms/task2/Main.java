@@ -1,4 +1,4 @@
-package ru.shcheglov.homework2.task2;
+package ru.shcheglov.algorythms.task2;
 
 import java.io.*;
 
