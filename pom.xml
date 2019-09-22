@@ -23,6 +23,7 @@
         <module>java-ee-store</module>
         <module>java-ee-basic</module>
         <module>multithreading</module>
+        <module>hibernate</module>
     </modules>
 
     <properties>
