@@ -1,4 +1,4 @@
-package ru.shcheglov.homework1.task2;
+package ru.shcheglov.oop.task2;
 
 public class LightWeightCar extends Car {
 

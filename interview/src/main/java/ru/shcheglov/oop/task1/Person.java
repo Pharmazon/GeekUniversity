@@ -1,4 +1,4 @@
-package ru.shcheglov.homework1.task1;
+package ru.shcheglov.oop.task1;
 
 public class Person {
 
