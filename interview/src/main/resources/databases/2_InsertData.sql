@@ -1,0 +1,34 @@
+insert into movies values (1, 'Хэнкок', 60);
+insert into movies values (2, 'Трансформеры', 90);
+insert into movies values (3, 'Люди в черном', 120);
+insert into movies values (4, 'Кошмар на улице Вязов', 90);
+insert into movies values (5, 'Игра на понижение', 120);
+
+insert into timetable values (1, timestamp '2019-09-14 10:00:00', 50, 1);
+insert into timetable values (2, timestamp '2019-09-14 12:00:00', 50, 1);
+insert into timetable values (4, timestamp '2019-09-14 14:00:00', 100, 4);
+insert into timetable values (5, timestamp '2019-09-14 15:30:00', 200, 5);
+insert into timetable values (6, timestamp '2019-09-14 15:00:00', 250, 1);
+insert into timetable values (7, timestamp '2019-09-14 16:00:00', 250, 2);
+insert into timetable values (9, timestamp '2019-09-14 19:00:00', 400, 4);
+insert into timetable values (10, timestamp '2019-09-14 20:10:00', 500, 5);
+insert into timetable values (11, timestamp '2019-09-14 21:10:00', 500, 1);
+insert into timetable values (12, timestamp '2019-09-14 22:10:00', 500, 1);
+insert into timetable values (13, timestamp '2019-09-14 22:00:00', 50, 3);
+
+insert into orders values (1, 'RT233254', 1);
+insert into orders values (3, 'TG6789687', 1);
+insert into orders values (2, 'DFG2455', 2);
+insert into orders values (4, 'DVF345', 4);
+insert into orders values (5, 'NJK24552', 5);
+insert into orders values (6, 'GH2563525', 10);
+insert into orders values (7, 'gdhre', 2);
+insert into orders values (8, 'rgsgr', 6);
+insert into orders values (9, '4253gas', 9);
+insert into orders values (10, 'sdfgr434', 12);
+insert into orders values (11, '35yshgf', 7);
+insert into orders values (12, '74hfghdg', 7);
+insert into orders values (13, 'DFG25455', 13);
+insert into orders values (14, 'DFG26455', 13);
+insert into orders values (15, 'DFG76455', 12);
+insert into orders values (16, 'DFG88455', 11);
