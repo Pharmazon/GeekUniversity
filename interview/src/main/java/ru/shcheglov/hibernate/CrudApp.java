@@ -14,13 +14,13 @@ public class CrudApp {
         }
         Long testId = studentDAO.getOneByName("Student_500").getId();
         List<Student> students = studentDAO.getAll();
-        studentDAO.close();
+        studentDAO.closeSession();
         students.forEach(System.out::println);
 
         //READ
         studentDAO.openSession();
         Student entity = studentDAO.getOneById(testId);
-        studentDAO.close();
+        studentDAO.closeSession();
         System.out.println(String.format("READ: %s", entity));
 
         //UPDATE
@@ -28,10 +28,10 @@ public class CrudApp {
         Student beforeUpdate = studentDAO.getOneById(testId);
         System.out.println(String.format("BEFORE UPDATE: %s", beforeUpdate));
         beforeUpdate.setName("UPDATED_TEST");
-        studentDAO.update(beforeUpdate);
+        studentDAO.saveOrUpdate(beforeUpdate);
         Student afterUpdate = studentDAO.getOneById(testId);
         System.out.println(String.format("AFTER UPDATE: %s", afterUpdate));
-        studentDAO.close();
+        studentDAO.closeSession();
 
         //DELETE
         studentDAO.openSession();
@@ -40,6 +40,7 @@ public class CrudApp {
         studentDAO.delete(beforeDelete);
         Student afterDelete = studentDAO.getOneById(testId);
         System.out.println(String.format("AFTER DELETE: %s", afterDelete == null ? "SUCCESS" : "FAIL"));
-        studentDAO.close();
+        studentDAO.closeSession();
+
     }
 }

@@ -7,18 +7,13 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-public class StudentDAO extends AbstractDAO<Student> implements DAO<Student> {
+public class StudentDAO extends AbstractDAO<Student> {
 
     @Override
     public List<Student> getAll() {
         return getSession()
                 .createNamedQuery("Student.getAll", Student.class)
                 .getResultList();
-    }
-
-    @Override
-    public Student getOneById(Long id) {
-        return getSession().find(Student.class, id);
     }
 
     public Student getOneByName(String name) {
