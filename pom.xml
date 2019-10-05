@@ -24,6 +24,7 @@
         <module>java-ee-basic</module>
         <module>multithreading</module>
         <module>hibernate</module>
+        <module>spring-aop</module>
     </modules>
 
     <properties>
