@@ -11,6 +11,10 @@
 
     <artifactId>interview</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>java-web</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
