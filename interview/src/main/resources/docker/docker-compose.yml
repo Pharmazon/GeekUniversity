@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  tomcat:
+    build: .
+    ports:
+      - "8888:8080"
+    container_name: my
+    volumes:
+      - ./volumes/webapps:/usr/local/tomcat/webapps
+      - ./volumes/conf:/usr/local/tomcat/conf

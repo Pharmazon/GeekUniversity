@@ -1,0 +1,14 @@
+server:
+  port: 8189
+  servlet:
+    context-path: /jwt
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=jwt
+    username: postgres
+    password: admin
+
+jwt:
+  secret: helloworld
