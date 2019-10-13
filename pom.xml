@@ -25,11 +25,13 @@
         <module>multithreading</module>
         <module>hibernate</module>
         <module>spring-aop</module>
+        <module>spring-rest-jwt</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -39,89 +41,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>RELEASE</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>PREPARATION</id>
-            <modules>
-                <module>preparation</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>JAVA1</id>
-            <modules>
-                <module>course-first</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>JAVA2</id>
-            <modules>
-                <module>course-second</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>FX</id>
-            <modules>
-                <module>fx-sql-chat</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>PUZZLE</id>
-            <modules>
-                <module>fifteen-puzzle-game</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>INTERVIEW</id>
-            <modules>
-                <module>interview</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>TOWER</id>
-            <modules>
-                <module>tower-defence-game</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>CLOUD_STORAGE</id>
-            <modules>
-                <module>cloud-storage</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>INTEGRATION</id>
-            <modules>
-                <module>spring-integration</module>
-            </modules>
-        </profile>
-<!--        <profile>-->
-<!--            <id>CLOUD</id>-->
-<!--            <modules>-->
-<!--                <module>cluster-config-server</module>-->
-<!--                <module>cluster-discovery-server</module>-->
-<!--                <module>cluster-microservice-api</module>-->
-<!--                <module>cluster-server-enterprise</module>-->
-<!--                <module>cluster-server-proxy</module>-->
-<!--            </modules>-->
-<!--        </profile>-->
-        <profile>
-            <id>ALL</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <modules>
-                <module>cloud-storage</module>
-                <module>tower-defence-game</module>
-                <module>interview</module>
-                <module>fifteen-puzzle-game</module>
-                <module>fx-sql-chat</module>
-                <module>course-second</module>
-                <module>course-first</module>
-                <module>preparation</module>
-            </modules>
-        </profile>
-    </profiles>
 </project>
